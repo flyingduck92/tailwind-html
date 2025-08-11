@@ -1,0 +1,24 @@
+{
+  "name": "tailwind-html",
+  "version": "1.0.0",
+  "description": "tailwind html project",
+  "homepage": "https://github.com/flyingduck92/tailwind-html#readme",
+  "bugs": {
+    "url": "https://github.com/flyingduck92/tailwind-html/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flyingduck92/tailwind-html.git"
+  },
+  "license": "MIT",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "tw:build": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/output.css --watch"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.11",
+    "tailwindcss": "^4.1.11"
+  }
+}

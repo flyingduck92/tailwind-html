@@ -7,6 +7,19 @@
   <link href="/dist/output.css" rel="stylesheet">
   <script defer src="./assets/fontawesome/js/fontawesome.min.js"></script>
   <script defer src="./assets/fontawesome/js/solid.min.js"></script>
+
+  <script>
+    window.onload = () => {
+      const mobileMenuIcon = document.getElementById('mobile-menu-button')
+      mobileMenuIcon.addEventListener('click', () => {
+        mobileMenuIcon.classList.toggle('open')
+        mobileMenuIcon.setAttribute(
+          'data-open',
+          mobileMenuIcon.getAttribute('data-open') === 'true' ? 'false' : 'true'
+        )
+      })
+    } 
+  </script>
 </head>
 
 <body>
@@ -19,11 +32,19 @@
             tw:<span class="text-sky-900">mf</span>
           </div>
         </div>
-        <div class="block md:hidden ml-auto my-auto cursor-pointer pr-4">
-          <div>
-            <div class="bg-zinc-200 rounded-full w-8 h-1"></div>
-            <div class="bg-zinc-200 rounded-full w-8 h-1 mt-1"></div>
-            <div class="bg-zinc-200 rounded-full w-8 h-1 mt-1"></div>
+        <div class="block md:hidden ml-auto my-auto pr-4 ">
+          <button id="mobile-menu-button" data-open="false" class="cursor-pointer group peer">
+            <div
+              class="top-0 bg-zinc-200 rounded-full w-8 h-1 group-open:rotate-45 group-open:top-2 relative transition-all">
+            </div>
+            <div class="bg-zinc-200 rounded-full w-8 h-1 mt-1 opacity-100 group-open:opacity-0 transition-all"></div>
+            <div
+              class="top-0 bg-zinc-200 rounded-full w-8 h-1 mt-1 group-open:-rotate-45 group-open:-top-2 relative transition-all">
+            </div>
+          </button>
+          <div
+            class="hidden peer-open:block absolute top-full bg-gradient-to-r from-rose-500 to-pink-500 w-full left-0">
+            mobile menu
           </div>
         </div>
         <div class="hidden md:flex flex-1 items-center justify-end ">

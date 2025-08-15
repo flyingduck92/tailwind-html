@@ -13,10 +13,11 @@
       const mobileMenuIcon = document.getElementById('mobile-menu-button')
       mobileMenuIcon.addEventListener('click', () => {
         mobileMenuIcon.classList.toggle('open')
-        mobileMenuIcon.setAttribute(
-          'data-open',
-          mobileMenuIcon.getAttribute('data-open') === 'true' ? 'false' : 'true'
-        )
+      })
+
+      const ticketMenuItem = document.getElementById('ticket-menu-item')
+      ticketMenuItem.addEventListener('click', () => {
+        ticketMenuItem.classList.toggle('open')
       })
     } 
   </script>
@@ -33,7 +34,7 @@
           </div>
         </div>
         <div class="block md:hidden ml-auto my-auto pr-4 ">
-          <button id="mobile-menu-button" data-open="false" class="cursor-pointer group peer">
+          <button id="mobile-menu-button" class="cursor-pointer group peer">
             <div
               class="top-0 bg-zinc-200 rounded-full w-8 h-1 group-open:rotate-45 group-open:top-2 relative transition-all">
             </div>
@@ -44,7 +45,32 @@
           </button>
           <div
             class="hidden peer-open:block absolute top-full bg-gradient-to-r from-rose-500 to-pink-500 w-full left-0">
-            mobile menu
+            <div
+              class="relative flex h-full cursor-pointer items-center justify-center p-4 font-bold text-pink-200 hover:text-zinc-200 transition-colors hover:bg-white/10">
+              <span>Home</span>
+            </div>
+            <div
+              class="relative flex h-full cursor-pointer items-center justify-center p-4 font-bold text-pink-200 hover:text-zinc-200 transition-colors hover:bg-white/10">
+              <span>Lineup</span>
+            </div>
+            <div id="ticket-menu-item"
+              class="group relative h-full cursor-pointer text-pink-200 hover:text-zinc-200 transition-colors hover:bg-white/10">
+              <div class="p-4 text-center font-bold">Tickets</div>
+              <div class="hidden group-open:block">
+                <div
+                  class="text-center p-4 relative text-pink-200 hover:text-zinc-200 hover:bg-white/5 transition-colors ease-in-out">
+                  <span>Single day ticket</span>
+                </div>
+                <div
+                  class="text-center p-4 relative text-pink-200 hover:text-zinc-200 hover:bg-white/5 transition-colors ease-in-out">
+                  <span>7-day ticket</span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="relative flex h-full cursor-pointer items-center justify-center p-4 font-bold text-pink-200 hover:text-zinc-200 transition-colors hover:bg-white/10">
+              <span>Support</span>
+            </div>
           </div>
         </div>
         <div class="hidden md:flex flex-1 items-center justify-end ">

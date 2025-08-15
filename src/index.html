@@ -11,14 +11,30 @@
   <script>
     window.onload = () => {
       const mobileMenuIcon = document.getElementById('mobile-menu-button')
+      const ticketMenuItem = document.getElementById('ticket-menu-item')
+
+      // remove .open on ticketMenuItem, if mobile menu closed
       mobileMenuIcon.addEventListener('click', () => {
+        if (ticketMenuItem.classList.contains('open')) {
+          ticketMenuItem.classList.remove('open')
+        }
+
         mobileMenuIcon.classList.toggle('open')
       })
 
-      const ticketMenuItem = document.getElementById('ticket-menu-item')
       ticketMenuItem.addEventListener('click', () => {
         ticketMenuItem.classList.toggle('open')
       })
+
+      // remove .open on above 768px
+      const smallBreakpoint = 768
+      const handleViewportChange = () => {
+        if (window.innerWidth > smallBreakpoint) {
+          mobileMenuIcon.classList.remove('open')
+        }
+      }
+      window.addEventListener('resize', handleViewportChange)
+
     } 
   </script>
 </head>

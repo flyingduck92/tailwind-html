@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="/dist/output.css" rel="stylesheet">
+  <link href="./output.css" rel="stylesheet">
   <script defer src="./assets/fontawesome/js/fontawesome.min.js"></script>
   <script defer src="./assets/fontawesome/js/solid.min.js"></script>
   <script>
@@ -164,7 +164,7 @@
         class="relative flex flex-col items-center justify-center h-[calc(100vh-200px)] min-h-[400px] bg-cover bg-center bg-fixed">
         <div class="absolute inset-0 bg-black/45"></div>
 
-        <!-- Logo mid container -->
+        <!-- Logo mid  -->
         <div class="bg-white/30 py-2 px-4 rounded-xl text-center backdrop-blur-md">
           <!-- Logo mid  -->
           <div class="relative">
@@ -285,11 +285,9 @@
           <i class="fas fa-angle-right"></i>
         </div>
       </div>
-    </div>
 
-    <!-- Line Up -->
-    <div class="container mx-auto mt-20 max-w-[95vw] text-zinc-900 dark:text-zinc-200">
-      <h2>Line Up</h2>
+      <!-- Line Up -->
+      <h2 class="mt-20">Line Up</h2>
       <p>Follow the time table so, you're not miss your favourite artist</p>
       <div class="rounded-lg mt-5 bg-zinc-800 py-4 px-2 text-zinc-200 relative">
         <!-- Timeline bar  -->
@@ -338,32 +336,41 @@
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Ticket -->
-    <div class="container mx-auto mt-20 max-w-[95vw] text-zinc-900 dark:text-zinc-200">
-      <h2>Ticket</h2>
-      <table class="mt-5 table w-full border border-zinc-500 border-collapse">
-        <thead class="text-lg font-bold">
-          <td class="border border-zinc-500 p-3 py-2 px-3">Ticket</td>
-          <td class="border border-zinc-500 p-3 py-2 px-3">Price</td>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="border border-zinc-500 py-2 px-3">Single Day Ticket</td>
-            <td class="border border-zinc-500 py-2 px-3">$70</td>
-          </tr>
-          <tr>
-            <td class="border border-zinc-500 py-2 px-3">7-Day Ticket</td>
-            <td class="border border-zinc-500 py-2 px-3">$100</td>
-          </tr>
-        </tbody>
-        <caption class="caption-bottom">
-          Once they're gone, they're gone
-        </caption>
-      </table>
+      <!-- Ticket -->
+      <div class="@container">
+        <h2 class="mt-20">Ticket</h2>
+        <table class="mt-5 table w-full border border-zinc-500 border-collapse">
+          <thead class="text-lg font-bold">
+            <td class="border border-zinc-500 p-3 py-2 px-3">Ticket</td>
+            <td class="border border-zinc-500 p-3 py-2 px-3">Price</td>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border border-zinc-500 py-2 px-3">Single Day Ticket</td>
+              <td class="border border-zinc-500 py-2 px-3">
+                <span>$ 70</span>
+                <button class="ml-4 px-3 py-2 bg-pink-500 cursor-pointer rounded-md text-white">
+                  Buy now
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td class="border border-zinc-500 py-2 px-3">7-Day Ticket</td>
+              <td class="border border-zinc-500 py-2 px-3">
+                <span>$ 100</span>
+                <button class="ml-4 px-3 py-2 bg-pink-500 cursor-pointer rounded-md text-white">
+                  Buy now
+                </button>
+              </td>
+            </tr>
+          </tbody>
+          <caption class="caption-bottom">
+            Once they're gone, they're gone
+          </caption>
+        </table>
+      </div>
     </div>
-
   </main>
 </body>
 

@@ -358,8 +358,14 @@
   .min-w-0 {
     min-width: calc(var(--spacing) * 0);
   }
+  .min-w-\[80\%\] {
+    min-width: 80%;
+  }
   .min-w-\[90\%\] {
     min-width: 90%;
+  }
+  .min-w-full {
+    min-width: 100%;
   }
   .flex-1 {
     flex: 1;

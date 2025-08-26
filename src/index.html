@@ -35,15 +35,55 @@
       }
       window.addEventListener('resize', handleViewportChange)
 
+      /* Carousel Prev + Next */
+      const carousel = document.getElementById('carousel')
+      const prev = document.getElementById('previous')
+      const next = document.getElementById('next')
+
+      prev.addEventListener('click', () => {
+        // get item width in pixels
+        const itemWidth = carousel.getElementsByTagName('div')[0].clientWidth
+        // add item width to carousel.scrollLeft
+        // carousel.scrollLeft = carousel.scrollLeft - itemWidth
+        carousel.scrollBy({ left: -itemWidth / 3, behavior: 'smooth' })
+      })
+
+      next.addEventListener('click', () => {
+        // get item width in pixels
+        const itemWidth = carousel.getElementsByTagName('div')[0].clientWidth
+        // add item width to carousel.scrollLeft
+        // carousel.scrollLeft = carousel.scrollLeft + itemWidth
+        carousel.scrollBy({ left: itemWidth / 3, behavior: 'smooth' })
+      })
+
+      const darkModeToggle = document.getElementById('dark-mode-toggle')
+      darkModeToggle.addEventListener('click', () => {
+        if (document.body.classList.contains('dark')) {
+          document.body.classList.remove('dark')
+        } else {
+          document.body.classList.add('dark')
+        }
+      })
     } 
   </script>
 </head>
 
-<body>
-  <main>
+<body class="dark">
+  <main class="bg-zinc-200 dark:bg-zinc-900">
     <header class="text-zinc-200">
+      <!-- Dark/Light Toggle -->
+      <button id="dark-mode-toggle"
+        class="z-1 fixed top-24 right-0 cursor-pointer inline-block w-12 rounded-l-lg bg-zinc-900 dark:bg-zinc-200 text-zinc-200 dark:text-zinc-900 p-2 text-3xl outline-sky-900 focus:outline-sky-900">
+        <span class="dark:hidden">
+          <i class="fa-solid fa-sun"></i>
+        </span>
+        <span class="hidden dark:inline">
+          <i class="fa-solid fa-moon"></i>
+        </span>
+      </button>
+
       <!-- Desktop Logo -->
-      <nav class="z-1 sticky flex top-0 bg-gradient-to-r from-rose-500 to-pink-500">
+      <nav class="z-10 sticky flex top-0 bg-gradient-to-r from-rose-500 to-pink-500">
         <div class="flex items-center p-2 gap-2">
           <img src="./assets/images/logo-inverted.png" width="50" alt="logo">
           <div class="font-bold text-2xl">
@@ -126,7 +166,9 @@
         class="relative flex flex-col items-center justify-center h-[calc(100vh-200px)] min-h-[400px] bg-cover bg-center bg-fixed">
         <div class="absolute inset-0 bg-black/45"></div>
 
+        <!-- Logo mid container -->
         <div class="bg-white/30 py-2 px-4 rounded-xl text-center backdrop-blur-md">
+          <!-- Logo mid  -->
           <div class="relative">
             <img src="./assets/images/logo.png" width="175" alt="logo">
 
@@ -142,15 +184,18 @@
             </div>
           </div>
 
+          <!-- Logo Name -->
           <div class="text-5xl font-bold">
             tw:<span class="text-sky-900">mf</span>
           </div>
         </div>
 
+        <!-- Subscribe Desc -->
         <div class="relative mt-3 text-sm font-bold">
           <p>Keep me updated with band news and promotions</p>
         </div>
 
+        <!-- Subscribe Form -->
         <form class="relative mt-3 flex gap-2">
           <input
             class="rounded-sm border border-white/40 bg-white/30 backdrop-blur-md p-2 font-bold text-white placeholder-gray-400 caret-pink-500 outline-pink-500 focus:outline"
@@ -164,10 +209,82 @@
       </div>
     </header>
 
-    <div class="max-w-screen-l mx-auto mt-20">
+    <!-- HEADLINERS -->
+    <div class="container mx-auto mt-20 max-w-[95vw] text-zinc-900 dark:text-zinc-200">
       <h2>Headliners</h2>
-      <p>Experience the sonic delight from these made-up artist 7 days that music fans are calling "one of the many gigs
-        that will happen this year"</p>
+      <p>
+        Experience the sonic delight from these made-up artist 7 days that music fans are calling "one of the many
+        gigs
+        that will happen this year"
+      </p>
+
+      <div class="flex">
+        <div id="previous" class="text-5xl flex justify-center items-center cursor-pointer p-2 relative -top-8">
+          <i class="fas fa-angle-left"></i>
+        </div>
+        <div id="carousel" class="scroll-smooth flex-1 mt-4 flex w-full gap-4 pb-5 snap-x overflow-x-auto min-w-0">
+          <div class="min-w-[90%] md:min-w-[40%]">
+            <div style="background-image: url('./assets/images/band1.jpg');"
+              class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20">
+            </div>
+            <h5 class="mt-2">Corduray Gary</h5>
+            <h6>1st July 9pm - Main Stage</h6>
+          </div>
+
+          <div class="min-w-[90%] md:min-w-[40%]">
+            <div style="background-image: url('./assets/images/band2.jpg');"
+              class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20">
+            </div>
+            <h5 class="mt-2">David Mojes</h5>
+            <h6>2nd July 9pm - Main Stage</h6>
+          </div>
+
+          <div class="min-w-[90%] md:min-w-[40%]">
+            <div style="background-image: url('./assets/images/band3.jpg');"
+              class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20">
+            </div>
+            <h5 class="mt-2">Billy Cash</h5>
+            <h6>3rd July 9pm - Main Stage</h6>
+          </div>
+
+          <div class="min-w-[90%] md:min-w-[40%]">
+            <div style="background-image: url('./assets/images/band4.jpg');"
+              class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20">
+            </div>
+            <h5 class="mt-2">Peterson</h5>
+            <h6>4th July 9pm - Main Stage</h6>
+          </div>
+
+          <div class="min-w-[90%] md:min-w-[40%]">
+            <div style="background-image: url('./assets/images/band5.jpg');"
+              class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20">
+            </div>
+            <h5 class="mt-2">Gary and friends</h5>
+            <h6>5th July 9pm - Main Stage</h6>
+          </div>
+
+          <div class="min-w-[90%] md:min-w-[40%]">
+            <div style="background-image: url('./assets/images/band6.jpg');"
+              class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20">
+            </div>
+            <h5 class="mt-2">Monica Jet</h5>
+            <h6>6th July 9pm - Main Stage</h6>
+          </div>
+
+          <div class="min-w-[90%] md:min-w-[40%]">
+            <div style="background-image: url('./assets/images/band7.jpg');"
+              class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20">
+            </div>
+            <h5 class="mt-2">Josephine Stone</h5>
+            <h6>7th July 9pm - Main Stage</h6>
+          </div>
+        </div>
+        <div id="next" class="text-5xl flex justify-center items-center cursor-pointer p-2 relative -top-8">
+          <i class="fas fa-angle-right"></i>
+        </div>
+      </div>
+
+
     </div>
 
   </main>

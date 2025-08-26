@@ -6,7 +6,7 @@
 @theme {
   --font-quicksand: "Quicksand", sans-serif;
 
-  --animate-wavey: wavey 1000ms linear infinite; 
+  --animate-wavey: wavey 1000ms linear infinite;
   --animation-delay-100: 100ms;
   --animation-delay-200: 200ms;
   --animation-delay-300: 300ms;
@@ -17,13 +17,16 @@
   --animation-delay-800: 800ms;
   --animation-delay-900: 900ms;
   --animation-delay-1000: 1000ms;
-  
+
   @keyframes wavey {
-    0%,100% {
-      transform: scale(0.5)
+
+    0%,
+    100% {
+      transform: scaleY(0.5)
     }
+
     50% {
-      transform: scale(1.5)
+      transform: scaleY(1.5)
     }
   }
 }
@@ -38,12 +41,29 @@
     font-family: var(--font-quicksand);
   }
 
-  h1 { @apply text-6xl font-bold; }
-  h2 { @apply text-5xl font-bold; }
-  h3 { @apply text-4xl font-bold; }
-  h4 { @apply text-3xl font-bold; }
-  h5 { @apply text-2xl font-bold; }
-  h6 { @apply  text-xl font-bold; }
+  h1 {
+    @apply text-6xl font-bold;
+  }
+
+  h2 {
+    @apply text-5xl font-bold;
+  }
+
+  h3 {
+    @apply text-4xl font-bold;
+  }
+
+  h4 {
+    @apply text-3xl font-bold;
+  }
+
+  h5 {
+    @apply text-2xl font-bold;
+  }
+
+  h6 {
+    @apply text-xl font-bold;
+  }
 }
 
 @layer components {
@@ -63,3 +83,5 @@
     @slot;
   }
 }
+
+@custom-variant dark (&:where(.dark, .dark *));

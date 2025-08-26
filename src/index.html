@@ -175,9 +175,9 @@
               <div class="bg-pink-500 w-14 h-14 rounded-full flex items-center justify-center gap-1">
                 <div class="h-2 w-1 bg-pink-300 rounded-full animate-wavey"></div>
                 <div class="h-3 w-1 bg-pink-200 rounded-full animate-wavey animation-delay-200"></div>
-                <div class="h-4 w-1 bg-pink-100 rounded-full animate-wavey animation-delay-[150ms]"></div>
+                <div class="h-4 w-1 bg-pink-100 rounded-full animate-wavey animation-delay-150"></div>
                 <div class="h-3 w-1 bg-pink-200 rounded-full animate-wavey animation-delay-300"></div>
-                <div class="h-2 w-1 bg-pink-300 rounded-full animate-wavey animation-delay-[75ms]"></div>
+                <div class="h-2 w-1 bg-pink-300 rounded-full animate-wavey animation-delay-75"></div>
               </div>
             </div>
           </div>
@@ -209,7 +209,11 @@
 
     <!-- HEADLINERS -->
     <div class="container mx-auto mt-20 max-w-[95vw] text-zinc-900 dark:text-zinc-200">
-      <h2>Headliners</h2>
+      <h2>
+        <span class="text-transparent bg-gradient-to-r from-cyan-500 to-pink-500 bg-clip-text">
+          Headliners
+        </span>
+      </h2>
       <p>
         Experience the sonic delight from these made-up artist 7 days that music fans are calling "one of the many
         gigs
@@ -288,8 +292,50 @@
       <h2>Line Up</h2>
       <p>Follow the time table so, you're not miss your favourite artist</p>
       <div class="rounded-lg mt-5 bg-zinc-800 py-4 px-2 text-zinc-200 relative">
+        <!-- Timeline bar  -->
         <div
           class="absolute top-0 left-1/2 w-4 -ml-[8px] h-full rounded-full bg-gradient-to-b from-sky-900 via-cyan-900 to-teal-900">
+          <!-- Pin indicator -->
+          <div class="sticky top-1/2">
+            <div class="relative size-4">
+              <!-- Ping/Pulse -->
+              <div class="absolute size-4 animate-ping rounded-full bg-pink-500 opacity-75"></div>
+              <!-- Pin Ball -->
+              <div class="bg-rose-400 rounded-full relative size-4"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Line up name -->
+        <div class="grid grid-cols-2 gap-8">
+          <div>
+            <h4 class="p-2 bg-zinc-900 rounded-lg my-4">1st July</h4>
+          </div>
+          <div></div>
+          <div class="text-right">
+            <div class="font-bold">Jackie Chaston</div>
+            <div class="text-zinc-400">6pm - Sage Stage</div>
+          </div>
+          <div></div>
+          <div></div>
+          <div class="text-left">
+            <div class="font-bold">Jackie Chaston</div>
+            <div class="text-zinc-400">6pm - Sage Stage</div>
+          </div>
+          <div>
+            <h4 class="p-2 bg-zinc-900 rounded-lg my-4">2nd July</h4>
+          </div>
+          <div></div>
+          <div class="text-right">
+            <div class="font-bold">Jackie Chaston</div>
+            <div class="text-zinc-400">6pm - Sage Stage</div>
+          </div>
+          <div></div>
+          <div></div>
+          <div class="text-left">
+            <div class="font-bold">Jackie Chaston</div>
+            <div class="text-zinc-400">6pm - Sage Stage</div>
+          </div>
         </div>
       </div>
     </div>

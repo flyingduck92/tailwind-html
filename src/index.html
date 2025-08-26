@@ -7,7 +7,6 @@
   <link href="/dist/output.css" rel="stylesheet">
   <script defer src="./assets/fontawesome/js/fontawesome.min.js"></script>
   <script defer src="./assets/fontawesome/js/solid.min.js"></script>
-
   <script>
     window.onload = () => {
       const mobileMenuIcon = document.getElementById('mobile-menu-button')
@@ -40,9 +39,11 @@
       const prev = document.getElementById('previous')
       const next = document.getElementById('next')
 
+      //  Tailwind CSS Only
       prev.addEventListener('click', () => {
         // get item width in pixels
-        const itemWidth = carousel.getElementsByTagName('div')[0].clientWidth
+        const gapSize = 48
+        const itemWidth = carousel.getElementsByTagName('div')[0].clientWidth + gapSize
         // add item width to carousel.scrollLeft
         // carousel.scrollLeft = carousel.scrollLeft - itemWidth
         carousel.scrollBy({ left: -itemWidth, behavior: 'smooth' })
@@ -50,7 +51,8 @@
 
       next.addEventListener('click', () => {
         // get item width in pixels
-        const itemWidth = carousel.getElementsByTagName('div')[0].clientWidth
+        const gapSize = 48
+        const itemWidth = carousel.getElementsByTagName('div')[0].clientWidth + gapSize
         // add item width to carousel.scrollLeft
         // carousel.scrollLeft = carousel.scrollLeft + itemWidth
         carousel.scrollBy({ left: itemWidth, behavior: 'smooth' })
@@ -58,11 +60,7 @@
 
       const darkModeToggle = document.getElementById('dark-mode-toggle')
       darkModeToggle.addEventListener('click', () => {
-        if (document.body.classList.contains('dark')) {
-          document.body.classList.remove('dark')
-        } else {
-          document.body.classList.add('dark')
-        }
+        document.body.classList.toggle('dark')
       })
     } 
   </script>
@@ -222,58 +220,58 @@
         <div id="previous" class="text-5xl flex justify-center items-center cursor-pointer p-2 relative -top-8">
           <i class="fas fa-angle-left"></i>
         </div>
-        <div id="carousel" class="scroll-smooth flex-1 mt-4 flex w-full gap-4 pb-5 snap-x overflow-x-auto min-w-0">
-          <div class="min-w-[80%] md:min-w-[40%]">
+        <div id="carousel" class="scroll-smooth flex-1 mt-4 flex w-full gap-8 pb-5 snap-x overflow-x-auto min-w-0">
+          <div class="min-w-[80%] md:min-w-[45%] snap-center">
             <div style="background-image: url('./assets/images/band1.jpg');"
-              class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20">
+              class="h-80 w-full rounded-xl bg-cover bg-center shadow-md shadow-black/20">
             </div>
             <h5 class="mt-2">Corduray Gary</h5>
             <h6>1st July 9pm - Main Stage</h6>
           </div>
 
-          <div class="min-w-[80%] md:min-w-[40%]">
+          <div class="min-w-[80%] md:min-w-[45%] snap-center">
             <div style="background-image: url('./assets/images/band2.jpg');"
-              class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20">
+              class="h-80 w-full rounded-xl bg-cover bg-center shadow-md shadow-black/20">
             </div>
             <h5 class="mt-2">David Mojes</h5>
             <h6>2nd July 9pm - Main Stage</h6>
           </div>
 
-          <div class="min-w-[80%] md:min-w-[40%]">
+          <div class="min-w-[80%] md:min-w-[45%] snap-center">
             <div style="background-image: url('./assets/images/band3.jpg');"
-              class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20">
+              class="h-80 w-full rounded-xl bg-cover bg-center shadow-md shadow-black/20">
             </div>
             <h5 class="mt-2">Billy Cash</h5>
             <h6>3rd July 9pm - Main Stage</h6>
           </div>
 
-          <div class="min-w-[80%] md:min-w-[40%]">
+          <div class="min-w-[80%] md:min-w-[45%] snap-center">
             <div style="background-image: url('./assets/images/band4.jpg');"
-              class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20">
+              class="h-80 w-full rounded-xl bg-cover bg-center shadow-md shadow-black/20">
             </div>
             <h5 class="mt-2">Peterson</h5>
             <h6>4th July 9pm - Main Stage</h6>
           </div>
 
-          <div class="min-w-[80%] md:min-w-[40%]">
+          <div class="min-w-[80%] md:min-w-[45%] snap-center">
             <div style="background-image: url('./assets/images/band5.jpg');"
-              class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20">
+              class="h-80 w-full rounded-xl bg-cover bg-center shadow-md shadow-black/20">
             </div>
             <h5 class="mt-2">Gary and friends</h5>
             <h6>5th July 9pm - Main Stage</h6>
           </div>
 
-          <div class="min-w-[80%] md:min-w-[40%]">
+          <div class="min-w-[80%] md:min-w-[45%] snap-center">
             <div style="background-image: url('./assets/images/band6.jpg');"
-              class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20">
+              class="h-80 w-full rounded-xl bg-cover bg-center shadow-md shadow-black/20">
             </div>
             <h5 class="mt-2">Monica Jet</h5>
             <h6>6th July 9pm - Main Stage</h6>
           </div>
 
-          <div class="min-w-[80%] md:min-w-[40%]">
+          <div class="min-w-[80%] md:min-w-[45%] snap-center">
             <div style="background-image: url('./assets/images/band7.jpg');"
-              class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20">
+              class="h-80 w-full rounded-xl bg-cover bg-center shadow-md shadow-black/20">
             </div>
             <h5 class="mt-2">Josephine Stone</h5>
             <h6>7th July 9pm - Main Stage</h6>
